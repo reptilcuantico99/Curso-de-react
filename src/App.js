@@ -1,24 +1,19 @@
-
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import tasks from './sample/tasks.json';
+import Tasks from './components/tasks'
 
-//funcion normal
-function HelloWord(props) {
 
-  return (
-    <div id='hello'>
-      <h3>{props.subtitle}</h3>
-      {props.mytext}
-      </div>
-  )
+class App extends Component {
+ 
+  state = {
+    tasks: tasks
+  }
+render(){
+  return <Tasks tasks={this.state.tasks}/>
+
+}
 }
 
-function App() {
-  return (
-  <div>This is my component:
-    <HelloWord mytext="Hello Reptil" subtitle="loremp ispum"/>
-    <HelloWord mytext="Hello Fazt" subtitle="Component"/>
-    <HelloWord mytext="Hello Willy" subtitle="Ipsum Loremp"/> </div>
-  );
-}
+
 export default App;
